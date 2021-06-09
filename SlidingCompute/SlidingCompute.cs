@@ -22,8 +22,8 @@ namespace SlidingCompute
             }
             initializeFifo(WindowSize);
             
-            var a = SlidingComputeImplementation(WindowSize, ArrayVals);
-            return a;
+            var implementationReturn = SlidingComputeImplementation(WindowSize, ArrayVals);
+            return implementationReturn;
         }
 
         protected void fifoPush(T value)
