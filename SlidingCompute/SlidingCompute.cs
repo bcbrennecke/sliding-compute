@@ -8,6 +8,14 @@ namespace SlidingCompute
         protected List<T> _fifo;
         protected int _fifoLength;
 
+        ///
+        /// This class handles the overhead work of dealing with a FIFO when performing sliding compute problems
+        /// To create another implementation, please inherit the SlidingCompute class with the appropriate types,
+        /// and then override the SlidingComputeImpelementation() method with the new compute logic.
+        /// See SlidingCompute/MovingAverage for an implmentation example.
+        ///
+        public abstract T[] SlidingComputeImplementation(int WindowSize, T[] ArrayVals);
+
         private void initializeFifo(int fifoLength)
         {
  
@@ -34,8 +42,6 @@ namespace SlidingCompute
                 _fifo.RemoveAt(0);
             }
         }
-
-        public abstract T[] SlidingComputeImplementation(int WindowSize, T[] ArrayVals);
 
     }
 }
