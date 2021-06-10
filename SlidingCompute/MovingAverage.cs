@@ -8,9 +8,9 @@ namespace SlidingCompute
 
         public override double[] SlidingComputeImplementation(int WindowSize, double[] ArrayVals)
         {
- 
-            var answer = new double[ArrayVals.Count()];
-            for (int i = 0; i < ArrayVals.Count(); i++)
+            var numArrayVals = ArrayVals.Count();
+            var answer = new double[numArrayVals];
+            for (int i = 0; i < numArrayVals; i++)
             {
                 fifoPush(ArrayVals[i]);
 
